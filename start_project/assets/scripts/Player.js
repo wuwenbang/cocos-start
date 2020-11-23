@@ -102,6 +102,10 @@ cc.Class({
 
     // 根据当前速度更新主角的位置
     this.node.x += this.xSpeed * dt;
+    // 限制主角的活动范围不能超过屏幕范围
+    if (Math.abs(this.node.x) > this.game.node.width / 2) {
+      this.node.x = ((this.game.node.width / 2) * this.node.x) / Math.abs(this.node.x);
+    }
   },
   //   start() {},
 });

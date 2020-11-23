@@ -47,6 +47,7 @@ cc.Class({
     this.starDuration = 0;
     // 生成一个新的星星
     this.spawnNewStar();
+    this.player.getComponent('Player').game = this;
   },
   spawnNewStar() {
     // 使用给定的模版在场景中生成一个新的节点
